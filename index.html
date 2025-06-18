@@ -3,244 +3,210 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IITian Collective - Elite Consulting</title>
+    <title>IITian Nexus | Elite Collective Intelligence</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
 </head>
-<body>
-    <div class="background-animation"></div>
-    <div class="container">
-        <header>
-            <nav class="navbar">
-                <div class="logo">
-                    <span class="logo-icon"><i class="fas fa-atom"></i></span>
-                    <span class="logo-text">IITian Collective</span>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#testimonials">Success Stories</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <div class="hamburger">
-                    <div class="line"></div>
-                    <div class="line"></div>
-                    <div class="line"></div>
-                </div>
-            </nav>
-        </header>
-
-        <main>
-            <section id="home" class="hero">
-                <div class="hero-content">
-                    <h1 class="attention-grabber">
-                        <span class="highlight">What if your problems were solved</span>
-                        <span class="typing-text">not by a single IITian</span>
-                        <span class="typing-text">but by a whole IIT</span>
-                        <span class="typing-text">for less than a week's salary of one?</span>
-                    </h1>
-                    <p class="hero-subtext">Harness the collective intelligence of India's brightest minds</p>
-                    <div class="cta-buttons">
-                        <a href="#contact" class="cta-button primary">Get Started</a>
-                        <a href="#services" class="cta-button secondary">Learn More</a>
-                    </div>
-                </div>
-                <div class="hero-visual">
-                    <div class="particles" id="particles-js"></div>
-                    <div class="floating-icons">
-                        <i class="fas fa-brain"></i>
-                        <i class="fas fa-chart-line"></i>
-                        <i class="fas fa-robot"></i>
-                        <i class="fas fa-code"></i>
-                    </div>
-                </div>
-            </section>
-
-            <section id="services" class="services">
-                <h2 class="section-title">Our Elite Services</h2>
-                <div class="service-cards">
-                    <div class="service-card">
-                        <div class="card-icon"><i class="fas fa-robot"></i></div>
-                        <h3>AI Solutions</h3>
-                        <p>Cutting-edge artificial intelligence tailored to your business needs.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="card-icon"><i class="fas fa-chart-network"></i></div>
-                        <h3>Data Analytics</h3>
-                        <p>Transform raw data into actionable business intelligence.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="card-icon"><i class="fas fa-bolt"></i></div>
-                        <h3>Rapid Prototyping</h3>
-                        <p>From concept to working prototype in record time.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="card-icon"><i class="fas fa-lock"></i></div>
-                        <h3>Cyber Security</h3>
-                        <p>Fortify your digital assets with elite protection.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section id="about" class="about">
-                <div class="about-content">
-                    <h2 class="section-title">The IITian Advantage</h2>
-                    <p>We're not just another consulting firm. We're a collective of IIT alumni and students working together to solve complex problems with innovative solutions.</p>
-                    <div class="stats">
-                        <div class="stat-item">
-                            <div class="stat-number" data-count="150">0</div>
-                            <div class="stat-label">IITians</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number" data-count="300">0</div>
-                            <div class="stat-label">Projects</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number" data-count="95">0</div>
-                            <div class="stat-label">% Satisfaction</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-visual">
-                    <div class="hexagon-grid">
-                        <div class="hexagon"></div>
-                        <div class="hexagon"></div>
-                        <div class="hexagon"></div>
-                        <div class="hexagon"></div>
-                        <div class="hexagon"></div>
-                        <div class="hexagon"></div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="testimonials" class="testimonials">
-                <h2 class="section-title">Success Stories</h2>
-                <div class="testimonial-slider">
-                    <div class="testimonial-slide active">
-                        <div class="testimonial-content">
-                            <p>"The IITian Collective transformed our data infrastructure in just two weeks. Their solution saved us ₹50 lakh annually in operational costs."</p>
-                            <div class="testimonial-author">
-                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client">
-                                <div>
-                                    <h4>Rahul Sharma</h4>
-                                    <p>CTO, TechNova Solutions</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-slide">
-                        <div class="testimonial-content">
-                            <p>"Working with the Collective gave us access to brilliant minds we could never afford individually. Their AI solution increased our conversion by 37%."</p>
-                            <div class="testimonial-author">
-                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client">
-                                <div>
-                                    <h4>Priya Patel</h4>
-                                    <p>CEO, MarketGenius</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-slide">
-                        <div class="testimonial-content">
-                            <p>"The security audit conducted by IITian Collective exposed vulnerabilities we didn't know existed. Their team was worth every rupee."</p>
-                            <div class="testimonial-author">
-                                <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Client">
-                                <div>
-                                    <h4>Arjun Mehta</h4>
-                                    <p>Director, SecureBank</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slider-controls">
-                        <button class="slider-prev"><i class="fas fa-chevron-left"></i></button>
-                        <button class="slider-next"><i class="fas fa-chevron-right"></i></button>
-                    </div>
-                    <div class="slider-dots">
-                        <span class="dot active"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                    </div>
-                </div>
-                <div class="partner-logos">
-                    <img src="https://via.placeholder.com/150x60?text=TechNova" alt="TechNova">
-                    <img src="https://via.placeholder.com/150x60?text=MarketGenius" alt="MarketGenius">
-                    <img src="https://via.placeholder.com/150x60?text=SecureBank" alt="SecureBank">
-                    <img src="https://via.placeholder.com/150x60?text=DataEdge" alt="DataEdge">
-                    <img src="https://via.placeholder.com/150x60?text=InnovateX" alt="InnovateX">
-                </div>
-            </section>
-
-            <section id="contact" class="contact">
-                <h2 class="section-title">Ready to Transform Your Business?</h2>
-                <div class="contact-container">
-                    <div class="contact-info">
-                        <h3>Get in Touch</h3>
-                        <p><i class="fas fa-envelope"></i> contact@iitiancollective.com</p>
-                        <p><i class="fas fa-phone"></i> +91 98765 43210</p>
-                        <p><i class="fas fa-map-marker-alt"></i> Innovation Tower, Mumbai, India</p>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-facebook"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                    <form class="contact-form">
-                        <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" placeholder="Company Name">
-                        </div>
-                        <div class="form-group">
-                            <textarea placeholder="How can we help you?" required></textarea>
-                        </div>
-                        <button type="submit" class="cta-button primary">Send Message</button>
-                    </form>
-                </div>
-            </section>
-        </main>
-
-        <footer>
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <span class="logo-icon"><i class="fas fa-atom"></i></span>
-                    <span class="logo-text">IITian Collective</span>
-                </div>
-                <div class="footer-links">
-                    <div class="link-group">
-                        <h4>Company</h4>
-                        <a href="#">About Us</a>
-                        <a href="#">Careers</a>
-                        <a href="#">Blog</a>
-                    </div>
-                    <div class="link-group">
-                        <h4>Services</h4>
-                        <a href="#">AI Solutions</a>
-                        <a href="#">Data Analytics</a>
-                        <a href="#">Cyber Security</a>
-                    </div>
-                    <div class="link-group">
-                        <h4>Legal</h4>
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms of Service</a>
-                        <a href="#">Cookie Policy</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 IITian Collective. All rights reserved.</p>
-            </div>
-        </footer>
+<body data-barba="wrapper">
+    <div class="loading-screen">
+        <div class="loading-text">
+            <span class="loading-char">A</span>
+            <span class="loading-char">C</span>
+            <span class="loading-char">T</span>
+            <span class="loading-char">I</span>
+            <span class="loading-char">V</span>
+            <span class="loading-char">A</span>
+            <span class="loading-char">T</span>
+            <span class="loading-char">I</span>
+            <span class="loading-char">N</span>
+            <span class="loading-char">G</span>
+            <span class="loading-char">&nbsp;</span>
+            <span class="loading-char">N</span>
+            <span class="loading-char">E</span>
+            <span class="loading-char">X</span>
+            <span class="loading-char">U</span>
+            <span class="loading-char">S</span>
+        </div>
+        <div class="loading-progress"></div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="script.js"></script>
-</body>
-</html>
+    <div class="cursor">
+        <div class="cursor-circle"></div>
+        <div class="cursor-dot"></div>
+    </div>
+
+    <div class="scroll-container" data-scroll-container>
+        <div class="main-content" data-barba="container">
+            <nav class="glass-nav">
+                <div class="nav-logo">
+                    <div class="logo-symbol">
+                        <div class="logo-circle"></div>
+                        <div class="logo-x">X</div>
+                    </div>
+                    <span class="logo-text">IITIAN NEXUS</span>
+                </div>
+                <div class="nav-links">
+                    <a href="#home" class="nav-link" data-text="HOME">HOME</a>
+                    <a href="#services" class="nav-link" data-text="SERVICES">SERVICES</a>
+                    <a href="#collective" class="nav-link" data-text="COLLECTIVE">COLLECTIVE</a>
+                    <a href="#testimonials" class="nav-link" data-text="TESTIMONIALS">TESTIMONIALS</a>
+                    <a href="#contact" class="nav-link" data-text="CONTACT">CONTACT</a>
+                </div>
+                <div class="nav-hamburger">
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+
+            <section id="home" class="hero-section">
+                <div class="hero-grid">
+                    <div class="hero-content">
+                        <h1 class="hero-title">
+                            <span class="title-line">
+                                <span class="title-word">UNLOCK</span>
+                                <span class="title-asterisk">*</span>
+                            </span>
+                            <span class="title-line">
+                                <span class="title-word">THE</span>
+                                <span class="title-word">POWER</span>
+                            </span>
+                            <span class="title-line">
+                                <span class="title-word">OF</span>
+                                <span class="title-highlight">
+                                    <span class="highlight-text">150+ IIT MINDS</span>
+                                    <span class="highlight-underline"></span>
+                                </span>
+                            </span>
+                        </h1>
+                        <div class="hero-subtitle">
+                            <p>Why hire one IITian when you can access an entire network for less than a week's salary?</p>
+                        </div>
+                        <div class="hero-cta">
+                            <a href="#contact" class="magnetic-btn">
+                                <span class="btn-text">ENGAGE COLLECTIVE</span>
+                                <span class="btn-arrow">→</span>
+                                <span class="btn-border btn-border-top"></span>
+                                <span class="btn-border btn-border-right"></span>
+                                <span class="btn-border btn-border-bottom"></span>
+                                <span class="btn-border btn-border-left"></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hero-visual">
+                        <div class="visual-container">
+                            <div class="particle-network" id="particle-network"></div>
+                            <div class="floating-shapes">
+                                <div class="shape shape-1"></div>
+                                <div class="shape shape-2"></div>
+                                <div class="shape shape-3"></div>
+                                <div class="shape shape-4"></div>
+                            </div>
+                            <div class="hero-image">
+                                <div class="image-mask"></div>
+                                <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="IITian Collective">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-scroll">
+                    <div class="scroll-text">SCROLL</div>
+                    <div class="scroll-line"></div>
+                </div>
+            </section>
+
+            <section id="services" class="services-section">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <span class="title-number">01</span>
+                        <span class="title-text">ELITE SERVICES</span>
+                    </h2>
+                    <div class="section-subtitle">We don't solve problems - we obliterate them with collective intelligence</div>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="card-number">01</div>
+                        </div>
+                        <h3 class="card-title">AI & Machine Learning</h3>
+                        <p class="card-desc">Harness the power of 50+ IITian data scientists to build transformative AI solutions.</p>
+                        <div class="card-cta">
+                            <span>EXPLORE</span>
+                            <div class="cta-line"></div>
+                        </div>
+                        <div class="card-background"></div>
+                    </div>
+                    <div class="service-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-chart-network"></i>
+                            </div>
+                            <div class="card-number">02</div>
+                        </div>
+                        <h3 class="card-title">Data Revolution</h3>
+                        <p class="card-desc">Turn your data into gold with our army of analytics experts.</p>
+                        <div class="card-cta">
+                            <span>EXPLORE</span>
+                            <div class="cta-line"></div>
+                        </div>
+                        <div class="card-background"></div>
+                    </div>
+                    <div class="service-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div class="card-number">03</div>
+                        </div>
+                        <h3 class="card-title">Quantum Computing</h3>
+                        <p class="card-desc">Future-proof your business with our quantum research team.</p>
+                        <div class="card-cta">
+                            <span>EXPLORE</span>
+                            <div class="cta-line"></div>
+                        </div>
+                        <div class="card-background"></div>
+                    </div>
+                    <div class="service-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="card-number">04</div>
+                        </div>
+                        <h3 class="card-title">Cyber Fortress</h3>
+                        <p class="card-desc">Impenetrable security designed by our defense specialists.</p>
+                        <div class="card-cta">
+                            <span>EXPLORE</span>
+                            <div class="cta-line"></div>
+                        </div>
+                        <div class="card-background"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="collective" class="collective-section">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <span class="title-number">02</span>
+                        <span class="title-text">THE NEXUS ADVANTAGE</span>
+                    </h2>
+                    <div class="section-subtitle">Access to India's brightest minds without the premium price tag</div>
+                </div>
+                <div class="collective-grid">
+                    <div class="collective-visual">
+                        <div class="visual-mesh"></div>
+                        <div class="floating-heads">
+                            <div class="head head-1"></div>
+                            <div class="head head-2"></div>
+                            <div class="head head-3"></div>
+                            <div class="head head-4"></div>
+                            <div class="head head-5"></div>
+                        </div>
+                    </div>
+                    <div class="collective-content">
+                        <div class="content-block">
+                            <div class="block-number">

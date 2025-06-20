@@ -87,15 +87,23 @@
     </div>
   </section>
 
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <div class="fancy-box">
-      <p>If you’d like to collaborate, consult, or discuss your challenge — reach out to us.</p>
-      <p><strong>Email:</strong> contact@iitconsulting.in</p>
-      <p><strong>Phone:</strong> +91 98765 43210</p>
-      <p><strong>LinkedIn:</strong> <a href="#" style="color: #00ffcc; text-decoration: underline;">Follow us on LinkedIn</a></p>
-    </div>
-  </section>
+ <section id="contact">
+  <h2>Contact Us</h2>
+  <div class="fancy-box">
+    <form action="https://formspree.io/f/YOUR_ID_HERE" method="POST">
+      <label>Name:</label><br>
+      <input type="text" name="name" required><br>
+
+      <label>Email:</label><br>
+      <input type="email" name="email" required><br>
+
+      <label>Your Message:</label><br>
+      <textarea name="message" rows="5" required></textarea><br>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
 
   <footer>
     <p>&copy; 2025 IIT Consulting Collective. All rights reserved.</p>

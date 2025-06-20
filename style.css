@@ -173,3 +173,24 @@ footer {
   color: #ffea00;
   font-weight: bold;
 }
+
+#tsparticles {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+
+.typing-text::after {
+  content: '|';
+  animation: blink 1s infinite;
+  color: #00ffcc;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+

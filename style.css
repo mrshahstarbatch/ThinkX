@@ -1,14 +1,45 @@
 /* style.css */
 
-/* Reset and base styles */
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
   color: white;
+  scroll-behavior: smooth;
 }
 
-/* Header section */
+nav {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline-flex;
+  gap: 30px;
+}
+
+nav ul li a {
+  color: #00ffcc;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 16px;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  color: white;
+  background-color: #00ffcc;
+  border-radius: 20px;
+}
+
+/* Hero Section */
 header {
   display: flex;
   justify-content: center;
@@ -36,7 +67,6 @@ header::after {
   padding: 20px;
 }
 
-/* Stylish container for text & testimonials */
 .fancy-box {
   background: rgba(0, 0, 0, 0.5);
   border: 2px solid rgba(0, 255, 204, 0.3);
@@ -56,13 +86,13 @@ header::after {
 }
 
 .fancy-box h1,
+.fancy-box h2,
 .fancy-box h3,
 .fancy-box p {
   color: #ffffff;
   text-shadow: 0 0 8px rgba(0, 255, 204, 0.3);
 }
 
-/* Button styling */
 .hero-text button {
   margin-top: 30px;
   padding: 15px 30px;
@@ -81,16 +111,14 @@ header::after {
   box-shadow: 0 0 25px #00ffcc, 0 0 60px #00ffcc;
 }
 
-/* Partner section */
-section#partners {
-  padding: 60px 20px;
-  background: #1c1c1c;
-  text-align: center;
+section {
+  padding: 80px 20px;
 }
 
-section#partners h2 {
+section h2 {
   font-size: 2.5rem;
-  margin-bottom: 40px;
+  text-align: center;
+  margin-bottom: 30px;
   color: #00ffcc;
   text-shadow: 0 0 10px #00ffcc;
 }
@@ -102,12 +130,10 @@ section#partners h2 {
   flex-wrap: wrap;
 }
 
-/* Testimonial card (inherits .fancy-box) */
 .card {
   max-width: 300px;
 }
 
-/* Footer */
 footer {
   text-align: center;
   padding: 20px;

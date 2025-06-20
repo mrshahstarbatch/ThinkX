@@ -1,173 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IIT Collective | Premium Consulting</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IIT Consulting Collective</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">
-                <span class="logo-icon">IIT</span>
-                <span class="logo-text">Collective</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+  <header>
+    <div class="hero-text">
+      <div class="fancy-box">
+        <h1>Imagine your problems solved</h1>
+        <p>Not by one IITian — but by the <strong>entire IIT ecosystem</strong>.<br>
+        And all this, at a cost <strong>less than a week's salary of a single IITian</strong>.</p>
+        <button onclick="scrollToPartners()">Explore Our Success Stories</button>
+      </div>
+    </div>
+  </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Why hire one IITian when you can access</h1>
-                <div class="highlight-box">
-                    <p>An entire IIT network for less than a week's salary?</p>
-                </div>
-                <p class="hero-subtext">150+ elite minds working collectively on your challenges</p>
-                <div class="cta-buttons">
-                    <a href="#contact" class="btn primary">Get Started</a>
-                    <a href="#services" class="btn secondary">Learn More</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="IITian team collaboration">
-            </div>
-        </div>
-    </section>
+  <section id="partners">
+    <h2>Our Satisfied Partners</h2>
+    <div class="testimonials">
+      <div class="card fancy-box">
+        <h3>ABC Tech Pvt. Ltd.</h3>
+        <p>"Their insights transformed our backend infrastructure — we saved 40% cost within 2 months!"</p>
+      </div>
+      <div class="card fancy-box">
+        <h3>NeoStart</h3>
+        <p>"The IIT Consulting Collective delivered a go-to-market strategy that actually worked. Brilliant minds."</p>
+      </div>
+      <div class="card fancy-box">
+        <h3>FutureWave Analytics</h3>
+        <p>"From ideation to scaling, they were with us all the way. True innovation partners."</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <h2 class="section-title">Our Elite Services</h2>
-            <p class="section-subtitle">Solutions crafted by India's brightest minds</p>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="card-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3>AI & ML Solutions</h3>
-                    <p>Cutting-edge artificial intelligence developed by our IIT data scientists</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="card-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Data Analytics</h3>
-                    <p>Transform raw data into actionable business intelligence</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="card-icon">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <h3>Rapid Prototyping</h3>
-                    <p>From concept to working prototype in record time</p>
-                </div>
-            </div>
-        </div>
-    </section>
+  <footer>
+    <p>&copy; 2025 IIT Consulting Collective. All rights reserved.</p>
+  </footer>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about-content">
-                <h2 class="section-title">The IITian Advantage</h2>
-                <p>A collective of IIT alumni and students working together to solve complex problems with innovative solutions at a fraction of traditional consulting costs.</p>
-                
-                <div class="stats">
-                    <div class="stat-item">
-                        <div class="stat-number">150+</div>
-                        <div class="stat-label">IITians</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">27</div>
-                        <div class="stat-label">Disciplines</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">95%</div>
-                        <div class="stat-label">Satisfaction</div>
-                    </div>
-                </div>
-            </div>
-            <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="IITian team">
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Ready to Transform Your Business?</h2>
-            <p class="section-subtitle">Connect with our collective today</p>
-            
-            <div class="contact-grid">
-                <div class="contact-form">
-                    <form>
-                        <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" placeholder="Company (Optional)">
-                        </div>
-                        <div class="form-group">
-                            <textarea placeholder="How can we help?" required></textarea>
-                        </div>
-                        <button type="submit" class="btn primary">Send Message</button>
-                    </form>
-                </div>
-                
-                <div class="contact-info">
-                    <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <p>contact@iitcollective.com</p>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-phone"></i>
-                        <p>+91 98765 43210</p>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>Innovation Tower, Mumbai, India</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <span class="logo-icon">IIT</span>
-                    <span class="logo-text">Collective</span>
-                </div>
-                <p>&copy; 2023 IIT Collective. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

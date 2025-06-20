@@ -1,228 +1,140 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize GSAP
-    gsap.registerPlugin(ScrollTrigger);
+    // Mobile menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
     
-    // Cursor effect
-    const cursor = document.querySelector('.cursor');
-    document.addEventListener('mousemove', (e) => {
-        gsap.to(cursor, {
-            x: e.clientX,
-            y: e.clientY,
-            duration: 0.5,
-            ease: 'power2.out'
+    menuToggle.addEventListener('click', function() {
+        this.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+    
+    // Close menu when clicking on a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', function() {
+            menuToggle.classList.remove('active');
+            navLinks.classList.remove('active');
         });
     });
     
-    // Magnetic button effect
-    const magneticBtns = document.querySelectorAll('.magnetic-btn');
-    magneticBtns.forEach(btn => {
-        btn.addEventListener('mousemove', (e) => {
-            const rect = btn.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            const distanceX = x - centerX;
-            const distanceY = y - centerY;
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
             
-            gsap.to(btn, {
-                x: distanceX * 0.2,
-                y: distanceY * 0.2,
-                duration: 0.5,
-                ease: 'power2.out'
-            });
-        });
-        
-        btn.addEventListener('mouseleave', () => {
-            gsap.to(btn, {
-                x: 0,
-                y: 0,
-                duration: 0.5,
-                ease: 'elastic.out(1, 0.5)'
-            });
-        });
-    });
-    
-    // Animate hero elements
-    gsap.from('.hero-title', {
-        y: 50,
-        opacity: 0,
-        duration: 1,
-        delay: 0.5,
-        ease: 'power3.out'
-    });
-    
-    gsap.to('.highlight-underline', {
-        scaleX: 1,
-        duration: 1,
-        delay: 1,
-        ease: 'power3.out'
-    });
-    
-    gsap.from('.hero-subtitle', {
-        y: 30,
-        opacity: 0,
-        duration: 1,
-        delay: 1.5,
-        ease: 'power3.out'
-    });
-    
-    gsap.from('.hero-cta', {
-        y: 30,
-        opacity: 0,
-        duration: 1,
-        delay: 2,
-        ease: 'power3.out'
-    });
-    
-    // Animate floating boxes on scroll
-    gsap.utils.toArray('.floating-text-box, .floating-image-box, .floating-card').forEach((box, i) => {
-        gsap.from(box, {
-            y: 100,
-            opacity: 0,
-            duration: 0.8,
-            delay: i * 0.1,
-            scrollTrigger: {
-                trigger: box,
-                start: 'top 80%',
-                toggleActions: 'play none none none'
-            },
-            ease: 'power3.out'
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
         });
     });
     
     // Animate stats counting
     const statNumbers = document.querySelectorAll('.stat-number');
-    statNumbers.forEach(stat => {
-        const target = parseInt(stat.getAttribute('data-count'));
-        const duration = 2000;
-        const start = 0;
-        const increment = target / (duration / 16);
-        let current = start;
-        
-        ScrollTrigger.create({
-            trigger: stat,
-            start: 'top 80%',
-            onEnter: () => {
-                const timer = setInterval(() => {
-                    current += increment;
-                    stat.textContent = Math.floor(current);
-                    
-                    if (current >= target) {
-                        stat.textContent = target;
-                        clearInterval(timer);
-                    }
-                }, 16);
-            },
-            once: true
-        });
-    });
     
-    // Testimonial slider
-    const sliderTrack = document.querySelector('.slider-track');
-    const slides = document.querySelectorAll('.testimonial-slide');
-    const prevBtn = document.querySelector('.slider-prev');
-    const nextBtn = document.querySelector('.slider-next');
-    let currentIndex = 0;
-    
-    function updateSlider() {
-        gsap.to(sliderTrack, {
-            x: `-${currentIndex * 100}%`,
-            duration: 0.6,
-            ease: 'power2.inOut'
-        });
-        
-        // Update pagination
-        document.querySelectorAll('.slider-dot').forEach((dot, index) => {
-            if (index === currentIndex) {
-                dot.classList.add('active');
-            } else {
-                dot.classList.remove('active');
-            }
+    function animateStats() {
+        statNumbers.forEach(stat => {
+            const target = parseInt(stat.getAttribute('data-count'));
+            const duration = 2000;
+            const start = 0;
+            const increment = target / (duration / 16);
+            let current = start;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                stat.textContent = Math.floor(current);
+                
+                if (current >= target) {
+                    stat.textContent = target;
+                    clearInterval(timer);
+                }
+            }, 16);
         });
     }
     
-    // Create pagination dots
-    const pagination = document.querySelector('.slider-pagination');
-    slides.forEach((_, index) => {
-        const dot = document.createElement('span');
-        dot.classList.add('slider-dot');
-        if (index === 0) dot.classList.add('active');
-        dot.addEventListener('click', () => {
-            currentIndex = index;
-            updateSlider();
+    // Initialize stats animation when scrolled to
+    const statsSection = document.querySelector('.about');
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateStats();
+                statsObserver.unobserve(entry.target);
+            }
         });
-        pagination.appendChild(dot);
     });
     
-    prevBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-        updateSlider();
+    statsObserver.observe(statsSection);
+    
+    // Testimonial slider
+    const testimonials = document.querySelectorAll('.testimonial');
+    const dots = document.querySelectorAll('.dot');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+    let currentTestimonial = 0;
+    
+    function showTestimonial(index) {
+        testimonials.forEach(testimonial => {
+            testimonial.classList.remove('active');
+        });
+        
+        dots.forEach(dot => {
+            dot.classList.remove('active');
+        });
+        
+        testimonials[index].classList.add('active');
+        dots[index].classList.add('active');
+        currentTestimonial = index;
+    }
+    
+    prevBtn.addEventListener('click', function() {
+        let newIndex = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+        showTestimonial(newIndex);
     });
     
-    nextBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % slides.length;
-        updateSlider();
+    nextBtn.addEventListener('click', function() {
+        let newIndex = (currentTestimonial + 1) % testimonials.length;
+        showTestimonial(newIndex);
     });
     
-    // Auto-rotate slides
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', function() {
+            showTestimonial(index);
+        });
+    });
+    
+    // Auto-rotate testimonials
     setInterval(() => {
-        currentIndex = (currentIndex + 1) % slides.length;
-        updateSlider();
+        let newIndex = (currentTestimonial + 1) % testimonials.length;
+        showTestimonial(newIndex);
     }, 5000);
     
-    // Mobile menu toggle
-    const hamburger = document.querySelector('.nav-hamburger');
-    const navLinks = document.querySelector('.nav-links');
-    
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navLinks.classList.toggle('active');
+    // Animate elements on scroll
+    const animateOnScroll = function() {
+        const elements = document.querySelectorAll('.service-card, .network-graphic, .testimonial-slider, .contact-form, .contact-info');
         
-        if (navLinks.classList.contains('active')) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = '';
-        }
-    });
-    
-    // Close menu when clicking on a link
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-    });
-    
-    // Hover effects for boxes
-    const floatingBoxes = document.querySelectorAll('.floating-text-box, .floating-card');
-    floatingBoxes.forEach(box => {
-        box.addEventListener('mousemove', (e) => {
-            const rect = box.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            const distanceX = x - centerX;
-            const distanceY = y - centerY;
+        elements.forEach(element => {
+            const elementPosition = element.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
             
-            gsap.to(box, {
-                rotationY: distanceX * 0.05,
-                rotationX: -distanceY * 0.05,
-                transformPerspective: 1000,
-                duration: 0.5,
-                ease: 'power2.out'
-            });
+            if (elementPosition < windowHeight - 100) {
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+            }
         });
-        
-        box.addEventListener('mouseleave', () => {
-            gsap.to(box, {
-                rotationY: 0,
-                rotationX: 0,
-                duration: 0.5,
-                ease: 'elastic.out(1, 0.5)'
-            });
-        });
+    };
+    
+    // Set initial state for animated elements
+    document.querySelectorAll('.service-card, .network-graphic, .testimonial-slider, .contact-form, .contact-info').forEach(element => {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(30px)';
+        element.style.transition = 'all 0.6s ease';
     });
+    
+    // Run animation on scroll
+    window.addEventListener('scroll', animateOnScroll);
+    animateOnScroll(); // Run once on load
 });

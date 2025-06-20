@@ -21,3 +21,17 @@ tsParticles.load("tsparticles", {
     }
   }
 });
+
+const fullText = "Imagine your problems solved. Not by one IITian — but by the entire IIT ecosystem. All at a cost less than a week's salary of a single IITian.";
+const typingElement = document.getElementById("typingText");
+let index = 0;
+
+function typeNextChar() {
+  if (index < fullText.length) {
+    typingElement.innerHTML = fullText.slice(0, index + 1);
+    index++;
+    setTimeout(typeNextChar, 40); // typing speed
+  }
+}
+typeNextChar();
+
